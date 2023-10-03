@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Traffic Light</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        overflow: hidden;
+      }
+      body {
+        width: 100vw;
+        height: 100vh;
+        background-color: black;
+        position: relative;
+      }
+      .canvas {
+        position: absolute;
+        width: 300px;
+        height: 150px;
+        border: 10px solid white;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas" class="canvas"></canvas>
+
+    <script>
+      const body = document.querySelector("body");
+      const canvas = document.getElementById("canvas");
+      const context = canvas.getContext("2d");
+
+      body.addEventListener("click", (e) => {
+        const x = e.clientX;
+        const y = e.clientY;
+        canvas.style.left = x + "px";
+        canvas.style.top = y + "px";
+
+      });
+
+      //board
+      context.beginPath();
+      context.rect(0, 0, 300, 150);
+      context.fill();
+
+      //first light
+      context.beginPath();
+      context.fillStyle = "gainsboro";
+      context.arc(50, 75, 34, 0, 360);
+      context.fill();
+
+      context.beginPath();
+      context.fillStyle = "red";
+      context.arc(50, 75, 30, 0, 360);
+      context.fill();
+
+      //second light
+      context.beginPath();
+      context.fillStyle = "gainsboro";
+      context.arc(150, 75, 34, 0, 360);
+      context.fill();
+
+      context.beginPath();
+      context.fillStyle = "orange";
+      context.arc(150, 75, 30, 0, 360);
+      context.fill();
+
+      //third light
+      context.beginPath();
+      context.fillStyle = "gainsboro";
+      context.arc(250, 75, 34, 0, 360);
+      context.fill();
+
+      context.beginPath();
+      context.fillStyle = "green";
+      context.arc(250, 75, 30, 0, 360);
+      context.fill();
+    </script>
+  </body>
+</html>
