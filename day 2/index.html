@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Follow Me</title>
+  </head>
+  <body>
+    <canvas id="canvas" width="400" height="400" style="background-color: black;"></canvas>
+
+    <script>
+      const canvas = document.getElementById("canvas");
+      const context = canvas.getContext("2d");
+
+      canvas.addEventListener("mousemove", (e) => {
+        context.clearRect(0, 0, 400, 400);
+
+        context.beginPath();
+        context.fillStyle = "blue";
+        context.arc(e.clientX-5, e.clientY-5, 30, 0, 360);
+        context.fill();
+
+        context.beginPath();
+        context.fillStyle = "red";
+        context.arc(e.clientX-5, e.clientY-5, 20, 0, 360);
+        context.fill();
+
+        context.beginPath();
+        context.fillStyle = "yellow";
+        context.arc(e.clientX-5, e.clientY-5, 10, 0, 360);
+        context.fill();
+      });
+    </script>
+  </body>
+</html>
