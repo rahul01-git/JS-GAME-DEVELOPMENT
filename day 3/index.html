@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animation</title>
+  </head>
+  <body>
+    <canvas
+      width="400"
+      height="400"
+      style="background-color: green"
+      id="canvas"
+    ></canvas>
+
+    <script>
+      const canvas = document.getElementById("canvas");
+      const c = canvas.getContext("2d");
+
+
+      function renderBox(x,y) {
+        c.beginPath();
+        c.fillStyle = "blue";
+        c.arc(x, y, 30, 0, 360);
+        c.fill();
+      }
+
+      function update() {
+        c.clearRect(0, 0, 500, 500);
+        renderBox();
+      }
+
+      canvas.addEventListener("click", ( ) => {
+        update();
+      });
+    </script>
+  </body>
+</html>
