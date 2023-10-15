@@ -7,6 +7,7 @@ const intervalId = setInterval(() => {
 }, 1000);
 
 const bird = new Bird();
+const pipe = new Pipe()
 const bg1 = new Background(0, 0);
 const bg2 = new Background(bg1.size.width, 0);
 
@@ -15,6 +16,7 @@ function animate() {
 
   bg1.update(bird.isDead);
   bg2.update(bird.isDead);
+  pipe.update()
   bird.update();
 
   c.font = "30px sans serif";
